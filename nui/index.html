@@ -1,0 +1,269 @@
+
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script>
+      function edit(id){
+        $.post(`https://nt_mdt/edit`, JSON.stringify({id}))
+      }
+      function del(id){
+        $.post(`https://nt_mdt/delete`, JSON.stringify({id})) 
+      }
+      function back(){
+        $("#home").show()
+        $("#login").hide()
+        $("#add-arresti").hide()
+        $("#add-multe").hide()
+        $("#add-arresti").hide()
+        $("#add-denunce").hide()
+        $("#add-ricercati").hide()
+        $("#list-arresti").hide()
+        $("#list-denunce").hide()
+        $("#list-multe").hide()
+        $("#list-ricercati").hide()
+        $("#edit").hide()
+      };
+      function editArrestiItem(data){
+        let id = data.id
+        let category = data.category
+        let grado = $(".grado").text()
+        let name = $(".name").text()
+        let nome = $("#nome-arresti-edit").val()
+        let bday = $("#bday-arresti-edit").val()
+        let reato = $("#reati-arresti-edit").val()
+        let anni_prigione = $("#anni-arresti-edit").val()
+        let confessione = $("#confessione-arresti-edit").val()
+        let oggetti = $("#oggetti-arresti-edit").val()
+        $.post(`https://nt_mdt/editItem`, JSON.stringify({
+          id,
+          category,
+          nome,
+          bday,
+          reato,
+          anni_prigione,
+          confessione,
+          oggetti,
+          grado,
+          name
+        })) 
+        $("input").val('')
+        $(".textarea").val('')
+      }
+      function editDenunceItem(data){
+      
+        let id = data.id
+        let category = data.category
+        let grado = $(".grado").text()
+        let name = $(".name").text()
+        let nome = $(".nome-dr-edit").val()
+        let bday = $(".bday-dr-edit").val()
+        let riassunto = $(".riassunto-dr-edit").val()
+        console.log(nome, bday, riassunto)
+        $.post(`https://nt_mdt/editItem`, JSON.stringify({
+          id,
+          category,
+          nome,
+          bday,
+          riassunto,
+          grado,
+          name
+        })) 
+        $("input").val('')
+        $(".textarea").val('')
+      }
+      function editMulteItem(data){ 
+        let id = data.id
+        let category = data.category
+        let grado = $(".grado").text()
+        let name = $(".name").text()
+        let nome = $("#nome-edit-multe").val()
+        let bday = $("#bday-edit-multe").val()
+        let reato = $("#reati-edit-multe").val()
+        let targa = $("#targa-edit-multe").val()
+        let euro = $("#euro-edit-multe").val()
+        let confessione = $("confessione-edit-multe").val()
+        let oggetti = $("#oggetti-edit-multe").val()
+        $.post(`https://nt_mdt/editItem`, JSON.stringify({
+          id,
+          category,
+          nome,
+          bday,
+          reato,
+          targa,
+          euro,
+          confessione,
+          oggetti,
+          grado,
+          name
+        })) 
+        $("input").val('')
+        $(".textarea").val('')
+      }
+    </script>
+</head>
+<body>
+    <div class="tablet">
+      <div class="screen">
+          <div id="login">
+            
+            <form class="login-form">
+              <img src="./img/snake.gif" class="img">
+              <h1>LOGIN</h1>
+              <br>
+              <input type="text" class="input-login"         placeholder="Registration Number" maxlength="7"><br>
+              <br>
+              <input type="submit" value="Submit"class="button submit-login" >
+              </form> 
+          </div>
+          <div id="home">
+            <h1 class="welcome">👤 Benvenuto, <span class="grado"></span> <span class="name"></span></h1>
+            <div class="grid-card">
+              <div class="card" id="arresti">
+                <h1>⛓</h1>
+                <h3>Arresti: <br> <span class="arresti-number"></span></h3>
+                 <button class="button" style="background-color:#ff3333; box-shadow: rgba(0, 0, 0, 0.3) 0vh 0.3vh 5vh, rgba(0, 0, 0, 0.22) 0vh 0.7vh 1.5vh;" id="aggiungi-arresti">Aggiungi</button>
+              </div>
+              <div class="card" id="multe">
+                <h1>💲</h1>
+                <h3>Multe: <br> <span class="multe-number"></span></h3>
+                <button class="button" style="background-color:#1cca47; box-shadow: rgba(0, 0, 0, 0.3) 0vh 0.3vh 5vh, rgba(0, 0, 0, 0.22) 0vh 0.7vh 1.5vh;" id="aggiungi-multe">Aggiungi</button>
+              </div>
+              <div class="card" id="denunce">
+                <h1>📣</h1>
+                <h3>Denunce: <br> <span class="denunce-number"></span> </h3>
+                <button class="button" style="background-color:#f39f18; box-shadow: rgba(0, 0, 0, 0.3) 0vh 0.3vh 5vh, rgba(0, 0, 0, 0.22) 0vh 0.7vh 1.5vh;" id="aggiungi-denunce">Aggiungi</button>
+              </div>
+              <div class="card" id="ricercati">
+                <h1>🔎</h1>
+                <h3>Ricercati:<br> <span class="ricercati-number"></span><h3>
+                <button class="button" style="background-color:#2f2f2f; box-shadow: rgba(0, 0, 0, 0.3) 0vh 0.3vh 5vh, rgba(0, 0, 0, 0.22) 0vh 0.7vh 1.5vh;" id="aggiungi-ricercati">Aggiungi</button>
+              </div>
+            </div>
+            <button class="button" id="ricerca-button">Ricerca 🔍</button>
+            <div class="buttons">
+              <button class="button" id="arresti-button">Lista Arresti</button> 
+              <button class="button" id="multe-button">Lista Multe</button>    
+              <button class="button" id="denunce-button">Lista Denunce</button>    
+              <button class="button" id="ricercati-button">Lista Ricercati</button>    
+            </div>
+          </div>
+          <div id="add-arresti"> 
+            <button class="lt"><h1>&lt;</h1></button>
+            <h1 class="aggiungi">Aggiungi Arresto</h1>
+            <form class="form-aggiungi" id="form-arresti">
+            <br>
+              <input type="text" class="input" id="nome-arresti"   placeholder="Nome e Cognome Soggetto" required >   <br>
+          <br>
+              <input type="date" class="input bday"  id="bday-arresti"     placeholder="Data di Nascita" required>
+           <br>
+           <br>
+              <textarea class="input textarea reati "id="reati-arresti"      placeholder="Reati Commessi" required></textarea>
+           <br>
+           <br>
+           <input type="number" min="0" class="input " id="anni-arresti"     placeholder ="Anni di Galera">
+           <br>
+           <br>
+              <textarea class="input textarea " id="confessione-arresti"     placeholder="Confessione"></textarea>
+           <br>
+           <br>
+              <textarea class="input textarea oggetti" id="oggetti-arresti" placeholder="Oggetti Sequestrati" required></textarea>
+           <br>
+           <br>
+          <button type="submit" value="Submit"class="button submit-arresti" id="submit-arresti" >Submit</button>
+        </form> 
+          </div>
+          <div id="add-multe"> 
+            <button class="lt"><h1>&lt;</h1></button>
+            <h1 class="aggiungi">Aggiungi Multa</h1>
+            <form class="form-aggiungi" id="form-multe">
+            <br>
+              <input type="text" class="input" id="nome-multe"   placeholder="Nome e Cognome Soggetto" required >   <br>
+          <br>
+              <input type="date" class="input bday"  id="bday-multe"     placeholder="Data di Nascita" required>
+           <br>
+           <br>
+              <textarea class="input textarea reati "id="reati-multe"      placeholder="Reati Commessi" required></textarea>
+           <br>
+           <br>
+           <input type="text" class="input" id="targa-multe"   placeholder="Targa Veicolo"> 
+           <br><br>
+           <input type="number" min="0" class="input " id="euro-multe"     placeholder ="Importo della Multa">
+           <br>
+           <br>
+              <textarea class="input textarea oggetti" id="oggetti-multe" placeholder="Oggetti Sequestrati" required></textarea>
+           <br>
+           <br>
+          <button type="submit" value="Submit"class="button submit-arresti" id="submit-multe" >Submit</button>
+        </form> 
+          </div>
+          <div id="add-denunce"> 
+            <button class="lt"><h1>&lt;</h1></button>
+            <h1 class="aggiungi">Aggiungi Denuncia</h1>
+            <form class="form-aggiungi" id="form-denunce">
+            <br>
+              <input type="text" class="input" id="nome-denunce"   placeholder="Nome e Cognome Denunciante" required >   <br>
+          <br>
+              <input type="date" class="input bday"  id="bday-denunce"     placeholder="Data di Nascita" required>
+           <br>
+           <br>
+              <textarea class="input textarea reati "id="riassunto-denunce"      placeholder="Riassunto della Denuncia" required></textarea>
+          <br>
+           <br>
+          <button type="submit" value="Submit"class="button submit-arresti" id="submit-denunce" >Submit</button>
+        </form> 
+          </div>
+          <div id="add-ricercati"> 
+            <button class="lt"><h1>&lt;</h1></button>
+            <h1 class="aggiungi">Aggiungi Ricercato</h1>
+            <form class="form-aggiungi" id="form-ricercati">
+            <br>
+              <input type="text" class="input" id="nome-ricercati"   placeholder="Nome e Cognome Ricercato" required >   <br>
+          <br>
+              <input type="date" class="input bday"  id="bday-ricercati"     placeholder="Data di Nascita" required>
+           <br>
+           <br>
+              <textarea class="input textarea reati "id="riassunto-ricercati"      placeholder="Riassunto" required></textarea>
+          <br>
+           <br>
+          <button type="submit" value="Submit"class="button submit-arresti" id="submit-ricercati" >Submit</button>
+        </form> 
+          </div>
+          <div id="list-arresti">
+            <button class="lt"><h1>&lt;</h1></button>
+            <h1 class="caro-arresti" ></h1>
+            <div class="item-grid" id="grid-arresti"></div>
+          </div>
+          <div id="list-multe">
+            <button class="lt"><h1>&lt;</h1></button>
+            <h1 class="caro-multe"></h1>
+            <div class="item-grid" id="grid-multe"></div>
+          </div>
+          <div id="list-denunce">
+            <button class="lt"><h1>&lt;</h1></button>
+            <h1 class="caro-denunce"></h1>
+            <div class="item-grid" id="grid-denunce"></div>
+          </div>
+          <div id="list-ricercati">
+            <button class="lt"><h1>&lt;</h1></button>
+            <h1 class="caro-ricercati"></h1>
+            <div class="item-grid" id="grid-ricercati"></div>
+          </div>
+          <div id="edit">
+          </div>
+          <div id="ricerca">
+            <button class="lt"><h1>&lt;</h1></button>
+              <h1 style="margin-top: 20px;">RICERCA</h1>
+              <form class="form-aggiungi" id="form-ricerca">
+                <br>
+                <br>
+                <input class="input" placeholder="Nome e Cognome" id="ricerca-name" required>
+                <button type="submit" value="Submit"class="button submit-ricerca" id="submit-cerca" >🔍</button>
+                <div id="list"></div>
+              </form>
+          </div>
+      </div>
+              <span class="home">
+              <div class="icon"></div>
+              </span>
+      </div>
+</body>

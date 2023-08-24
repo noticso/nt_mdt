@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #004da0; 
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+}
+::-webkit-scrollbar-thumb {
+  background: #007bff; 
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.tablet{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vh;
+  height: 60vh;
+  border: none;
+  border-radius: 2vh;
+  background-color: #2f2f2f;
+  box-shadow: rgba(0, 0, 0, 0.3) 0vh        0.3vh 5vh, rgba(0, 0, 0, 0.22) 0vh 0.7vh 1.5vh;
+  transform: translate(-50%, -50%);
+}
+.home{
+  position: absolute;
+  top: 50%;
+  left: 98%;
+  transform: translate(-50%, -52%);
+  overflow: hidden;
+   cursor: pointer;
+
+  width:27.5px;
+  height:27.5px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius: 15px;
+    box-shadow: 0px 0px 12px 1px #000000;
+    z-index:-1
+}
+.icon{
+  width:15px;
+  height:15px;
+  border:2px solid white;
+  border-radius: 3.5px
+}
+.screen {
+
+  overflow-x: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 92vh;
+  height: 58vh;
+  border: none;
+  border-radius: 2vh;
+  background-color: #ebebeb ;
+  transform: translate(-50%, -50%);
+}
+#login{
+  background-image: url("../img/police-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top:5.5%;
+  width: 92vh;
+  height: 58vh;
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+  color:white
+}
+#home{
+  width: 92vh;
+  height: 58vh;
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+  text-align: center;
+
+  overflow: hidden;
+}
+#add-arresti, #add-multe, #add-denunce, #add-ricercati, #list-arresti, #list-ricercati, #list-multe, #list-denunce, #edit, #ricerca{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button{
+  overflow: hidden;
+   cursor: pointer;
+  color:white;
+  border: none;
+  width:100px;
+  font-weight:bold;
+  border-radius:5px;
+}
+.submit-login, .submit-arresti, .submit-edit{
+  width:200px;
+  background-color:#007bff;
+}
+.submit-ricerca{
+  background-color:#007bff;
+  width: 40px;
+}
+.login-form{
+  text-align: center;
+  width: 50vh;
+  height: 40vh;
+
+}
+input{
+  width:200px;
+  border:none;
+  text-align:center
+}
+
+.img{
+  width: 200px;
+  height: 200px;
+}
+.welcome{
+  margin-top: 20px;
+}
+.grid-card{
+    margin-top: 50px;
+    margin-left: 30%;
+    margin-right: 30%;
+    display: grid;
+    grid-template-columns: auto auto ;
+   
+}
+.card{
+  color:white;
+  width:180px;
+  height:150px;
+  border:none;
+  margin:10px;
+  border-radius:10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0vh 0.3vh 5vh, rgba(0, 0, 0, 0.22) 0vh 0.7vh 1.5vh;
+}
+.buttons{
+  margin-top:50px;
+}
+#ricercati{
+   background: 
+    radial-gradient(ellipse at left, #2f2f2f, transparent), radial-gradient(ellipse at left, #2f2f2f, transparent),radial-gradient(ellipse at right, #2f2f2f, transparent);
+}
+#multe{
+ 
+  background: 
+    radial-gradient(ellipse at left,  #1cca47, transparent), radial-gradient(ellipse at left,  #1cca47, transparent),radial-gradient(ellipse at right,  #1cca47, transparent);
+}
+#arresti{
+  background: 
+    radial-gradient(ellipse at left, 	 #ff3333, transparent), radial-gradient(ellipse at left, 	 #ff3333, transparent),radial-gradient(ellipse at right, 	 #ff3333, transparent);
+}
+#denunce{
+ 
+  background: 
+    radial-gradient(ellipse at left, 	  	 #f39f18, transparent), radial-gradient(ellipse at left, 	  	 #f39f18, transparent),radial-gradient(ellipse at right, #f39f18, transparent);
+}
+#arresti-button, #multe-button, #denunce-button, #ricercati-button, #ricerca-button{
+  width: 150px;
+}
+#ricercati-button{
+  background-color: #2f2f2f;
+}
+#multe-button{
+  background-color: #1cca47;
+}
+#arresti-button{
+  background-color:	 #ff3333
+}
+#denunce-button{
+  background-color:	 #f39f18
+}
+#ricerca-button{
+  background-color: #007bff;
+  position: absolute;
+  top:76%
+}
+.lt{
+  position: absolute;
+  top:20px;
+  left:15px;
+  background: rgba(0,0,0,0);
+  border:none;
+  overflow: hidden;
+  cursor: pointer;
+  color: #007bff
+}
+.textarea{
+  width:200px;
+  height:100px;
+  text-align:center
+}
+.form-aggiungi{
+  margin-bottom:10px;
+}
+.form-aggiungi > input, .form-aggiungi > textarea{
+  width: 300px !important; 
+}
+.aggiungi{
+  margin-top: 20px
+}
+.caro-denunce, .caro-arresti, .caro-ricercati, .caro-multe{
+  margin-top:20px
+}
+.item-grid{
+  text-align:left;
+   display: grid;
+    grid-template-columns: auto;
+    max-height: 60vh;
+    justify-content: center;
+    padding: 10px; 
+    border-top-left-radius: 2vh;
+    border-bottom-left-radius: 2vh;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+.item{
+  width:88vh;
+  margin: 10px;
+  padding: 10px;
+  border:2px solid #b60d4c;
+  border-radius: 10px;
+}
+.edit{
+  background-color:#ffc107;
+  margin: 10px
+
+}
+.delete{
+  background-color:#dc3545;
+  margin: 10px
+}
