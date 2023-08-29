@@ -18,7 +18,7 @@
     <a href="https://github.com/noticso/nt_mdt"><strong>Esplora le docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/noticso/nt_mdt">Guarda la demo</a>
+    <a href="https://streamable.com/hmdynh">Guarda la demo</a>
     ·
     <a href="https://github.com/noticso/nt_mdt/issues">Segnala Bug</a>
     ·
