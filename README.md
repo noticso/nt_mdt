@@ -13,16 +13,16 @@
 <h3 align="center">nt_crafting</h3>
 
   <p align="center">
-    Un menu crafting semplice, bello, e facile da configurare. Costantemente aggiornato!
+    MDT Tablet per le Forze Dell'Ordine, veloce e semplice!
     <br />
-    <a href="https://github.com/noticso/nt_crafting"><strong>Esplora le docs »</strong></a>
+    <a href="https://github.com/noticso/nt_mdt"><strong>Esplora le docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/noticso/nt_crafting">Guarda la demo</a>
+    <a href="https://github.com/noticso/nt_mdt">Guarda la demo</a>
     ·
-    <a href="https://github.com/noticso/nt_crafting/issues">Segnala Bug</a>
+    <a href="https://github.com/noticso/nt_mdt/issues">Segnala Bug</a>
     ·
-    <a href="https://github.com/noticso/nt_crafting/issues">Richiedi Features</a>
+    <a href="https://github.com/noticso/nt_mdt/issues">Richiedi Features</a>
   </p>
 </div>
 
@@ -56,7 +56,8 @@
 <!-- ABOUT THE PROJECT -->
 ## Progetto
 
-![crafting](https://github.com/noticso/nt_crafting/assets/76558194/23bf1562-1adb-4958-8930-52772b15a39b)
+![mdtTablet](https://github.com/noticso/nt_mdt/assets/76558194/5879e675-0b48-470e-8ec2-c2d59df991c7)
+
 
 
 
@@ -81,66 +82,17 @@ Per iniziare dovrai:
 
 ### Pre-requisiti
 1. Avere una base FiveM con le ox resources [(ox_inventory, ox_lib, ox_mysql)](https://overextended.dev/)
-2. Installare il [(gridsystem)](https://github.com/Profex1999/gridsystem)
+
 
 ### Installazione
 
 
 1. Clona la repository
    ```sh
-   git clone https://github.com/noticso/nt_crafting.git
+   git clone https://github.com/noticso/nt_mdt.git
    ```
-2. Inserisci la tua location in `client.lua`
-   ```lua
-   local location = vector3(x,y,z)
-   ```
-3. Configura il tuo marker in `client.lua`
-   ```lua
-    TriggerEvent('gridsystem:registerMarker', {
-		name = "MarkerName",
-		pos = location,
-		size = vector3(1.2, 1.2, 1.2),
-		scale = vector3(0.8, 0.8, 0.8),
-		control = 'E',
-		rotate = 0.0,
-		rotate2 = 0.0,
-		shouldBob = false,
-		shouldRotate = true,
-		color =  { r = R , g = G, b = B },
-		trasparent = 255,
-		type = -1, -- se hai una texture lascia -1, altrimenti cambia il numero
-		texture = "TextureName",
-		msg = 'Crafting Menu',
-		action = function()
-			CreateThread(function()
-				TriggerEvent('nt_crafting:SetDisplay', true)
-				while display do 
-					DisableControlAction(0,1, display)
-    				DisableControlAction(0,142, display)
-    				DisableControlAction(0,18, display)
-    				DisableControlAction(0,322, display)
-    				DisableControlAction(0,2, display)
-    				DisableControlAction(0,106, display)
-					Wait(0)
-				end
-			end)
-		end
-	})
-   ```
-4. Configura il tuo menu in `config.lua`
-   ```lua
-   ['ITEM_HASH'] = {
-    name= 'Item Name',
-    img = './img/item_hash.png',
-    id='ITEM_HASH',
-    material={
-    MATERIAL_HASH = Quantity,
-    },
-    points = POINTS_GAINED,
-    levelRequired = NUMBER
-    },
-   ```
-5. Apri il file `crafting.sql` in HeidiSQL e metti la tabella nel tuo database
+2. Apri il file `db.sql` in HeidiSQL e metti la tabella nel tuo database
+3. Aggiungi la colonna `matricola` alla tabella SQL `users`
 
 <p align="right">(<a href="#readme-top">torna all'inizio</a>)</p>
 
@@ -151,7 +103,7 @@ Per iniziare dovrai:
 
 Guarda questo video per vedere l'utilizzo di questo script di FiveM
 
-[Link Video](https://streamable.com/jop0ry)
+[Link Video](https://streamable.com/hmdynh)
 
 
 <!-- CONTRIBUTING -->
@@ -175,7 +127,7 @@ Se vuoi contribuire a questo script segui questo passaggi
 
 [Discord](https://discord.gg/uY9agGndYs) - @noticso
 
-Project Link: [https://github.com/noticso/nt_crafting](https://github.com/noticso/nt_crafting)
+Project Link: [https://github.com/noticso/nt_mdt](https://github.com/noticso/nt_mdt)
 
 <p align="right">(<a href="#readme-top">torna all'inizio</a>)</p>
 
