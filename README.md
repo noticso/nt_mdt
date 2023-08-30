@@ -56,7 +56,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Progetto
 
-![mdtTablet](https://github.com/noticso/nt_mdt/assets/76558194/5879e675-0b48-470e-8ec2-c2d59df991c7)
+![mdtTablet](https://github.com/noticso/nt_mdt/assets/76558194/6c9e3e6e-1f9f-4559-988c-ce85b609801f)
 
 
 
