@@ -92,7 +92,7 @@ Per iniziare dovrai:
    git clone https://github.com/noticso/nt_mdt.git
    ```
 2. Apri il file `db.sql` in HeidiSQL e metti la tabella nel tuo database
-3. Aggiungi la colonna `matricola` alla tabella SQL `users`
+3. Aggiungi la colonna `matricola` alla tabella SQL `users`. N.B: la matricola dovrà avere il tipo varchar e dovrà essere struttura come xxx-xxx oppure xxxxxxx
 
 <p align="right">(<a href="#readme-top">torna all'inizio</a>)</p>
 
