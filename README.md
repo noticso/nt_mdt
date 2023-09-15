@@ -10,7 +10,7 @@
     <img src="https://github.com/noticso/nt_ammunation/assets/76558194/4804ee90-846b-45bc-be97-33cfe917e27d" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">nt_crafting</h3>
+<h3 align="center">nt_mdt</h3>
 
   <p align="center">
     MDT Tablet per le Forze Dell'Ordine, veloce e semplice!
